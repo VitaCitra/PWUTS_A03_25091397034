@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Kasir | Website Kasir</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="absensi">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">K</div>
+            <div>
+                <h2>KasirKu</h2>
+                <small>Restaurant System</small>
+            </div>
+        </div>
+
+        <p class="menu-label">MENU UTAMA</p>
+
+<nav class="sidebar-nav">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <a href="absensi.html" class="nav-link active">Absensi Kasir</a>
+    <a href="reservasi.html" class="nav-link">Cek Reservasi</a>
+</nav>
+
+        <div class="sidebar-footer">
+            <div class="avatar">K</div>
+            <div>
+                <strong>Petugas Kasir</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Kasir / Absensi</p>
+                <h3>Absensi Karyawan</h3>
+            </div>
+
+            <div class="topbar-right">
+                <span class="status-open">● Sistem Aktif</span>
+                <span id="tanggal-sekarang"></span>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="welcome-section">
+                <div>
+                    <p class="eyebrow">MANAJEMEN KARYAWAN</p>
+                    <h1>Absensi Karyawan</h1>
+                    <p>
+                        Catat dan pantau kehadiran karyawan restoran.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">♙</div>
+                    <p>Total Karyawan</p>
+                    <h2 id="absensi-total-karyawan">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <p>Hadir</p>
+                    <h2 id="absensi-hadir">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">◷</div>
+                    <p>Izin</p>
+                    <h2 id="absensi-izin">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">!</div>
+                    <p>Belum Hadir</p>
+                    <h2 id="absensi-belum">0</h2>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Tambah Absensi</h2>
+                        <p>Masukkan informasi karyawan.</p>
+                    </div>
+                </div>
+
+                <form id="form-absensi" class="form-grid">
+
+                    <div class="form-group">
+                        <label for="nama-karyawan">
+                            Nama Karyawan
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nama-karyawan"
+                            placeholder="Masukkan nama karyawan"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jabatan-karyawan">
+                            Jabatan
+                        </label>
+
+                        <select id="jabatan-karyawan" required>
+                            <option value="">Pilih Jabatan</option>
+                            <option value="Kasir">Kasir</option>
+                            <option value="Pelayan">Pelayan</option>
+                            <option value="Koki">Koki</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status-absensi">
+                            Status Kehadiran
+                        </label>
+
+                        <select id="status-absensi" required>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Izin">Izin</option>
+                            <option value="Belum Hadir">Belum Hadir</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-button">
+                        <button type="submit" class="btn btn-primary">
+                            + Simpan Absensi
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Daftar Absensi</h2>
+                        <p>Informasi kehadiran karyawan.</p>
+                    </div>
+
+                    <input
+                        type="search"
+                        id="cari-karyawan"
+                        class="search-input"
+                        placeholder="Cari nama karyawan..."
+                    >
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Karyawan</th>
+                                <th>Jabatan</th>
+                                <th>Tanggal</th>
+                                <th>Jam Masuk</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabel-absensi">
+                            <tr>
+                                <td colspan="7" class="empty-state">
+                                    Belum ada data absensi.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

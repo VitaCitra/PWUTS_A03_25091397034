@@ -1,0 +1,88 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Website Kasir</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="beranda">
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Kasir<span>App</span></h2>
+                <p>Sistem Manajemen Kasir</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link active">Beranda</a>
+                <a href="absensi.html" class="nav-link">Absensi Kasir</a>
+                <a href="reservasi.html" class="nav-link">Cek Reservasi</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1>Beranda</h1>
+                    <p>Ringkasan aktivitas kasir dan reservasi pelanggan.</p>
+                </div>
+                <div id="tanggal-sekarang"></div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Reservasi</h3>
+                    <p id="total-reservasi">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Kasir Hadir</h3>
+                    <p id="total-hadir">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Reservasi Menunggu</h3>
+                    <p id="total-menunggu">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Pendapatan</h3>
+                    <p id="total-pendapatan">Rp0</p>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Reservasi Terbaru</h2>
+                    <a href="reservasi.html" class="btn btn-primary">Cek Reservasi</a>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Pelanggan</th>
+                                <th>Nomor Meja</th>
+                                <th>Total Pesanan</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="beranda-reservasi">
+                            <tr>
+                                <td colspan="5">Belum ada data reservasi.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+```

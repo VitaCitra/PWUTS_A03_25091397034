@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Reservasi | Website Kasir</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="reservasi">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">K</div>
+            <div>
+                <h2>KasirKu</h2>
+                <small>Restaurant System</small>
+            </div>
+        </div>
+
+        <p class="menu-label">MENU UTAMA</p>
+
+<nav class="sidebar-nav">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <a href="absensi.html" class="nav-link">Absensi Kasir</a>
+    <a href="reservasi.html" class="nav-link active">Cek Reservasi</a>
+</nav>
+
+        <div class="sidebar-footer">
+            <div class="avatar">K</div>
+            <div>
+                <strong>Petugas Kasir</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Kasir / Cek Reservasi</p>
+                <h3>Reservasi Pelanggan</h3>
+            </div>
+
+            <div class="topbar-right">
+                <span class="status-open">● Sistem Aktif</span>
+                <span id="tanggal-sekarang"></span>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="welcome-section">
+                <div>
+                    <p class="eyebrow">PEMESANAN RESTORAN</p>
+                    <h1>Cek Reservasi Pelanggan</h1>
+                    <p>
+                        Kelola reservasi meja, pilihan menu, dan total
+                        pembayaran pelanggan.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">▣</div>
+                    <p>Total Reservasi</p>
+                    <h2 id="reservasi-jumlah">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">◷</div>
+                    <p>Menunggu</p>
+                    <h2 id="reservasi-menunggu">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <p>Dikonfirmasi</p>
+                    <h2 id="reservasi-konfirmasi">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">Rp</div>
+                    <p>Total Transaksi</p>
+                    <h2 id="reservasi-pendapatan">Rp0</h2>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Buat Reservasi Baru</h2>
+                        <p>Isi data pelanggan dan pilih menu yang dipesan.</p>
+                    </div>
+                </div>
+
+                <form id="form-reservasi">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="nama-pelanggan">
+                                Nama Pelanggan
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nama-pelanggan"
+                                placeholder="Masukkan nama pelanggan"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nomor-meja">
+                                Nomor Meja
+                            </label>
+
+                            <select id="nomor-meja" required>
+                                <option value="">Pilih Nomor Meja</option>
+                                <option value="Meja 01">Meja 01</option>
+                                <option value="Meja 02">Meja 02</option>
+                                <option value="Meja 03">Meja 03</option>
+                                <option value="Meja 04">Meja 04</option>
+                                <option value="Meja 05">Meja 05</option>
+                                <option value="Meja 06">Meja 06</option>
+                                <option value="Meja 07">Meja 07</option>
+                                <option value="Meja 08">Meja 08</option>
+                                <option value="Meja 09">Meja 09</option>
+                                <option value="Meja 10">Meja 10</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jumlah-pelanggan">
+                                Jumlah Pelanggan
+                            </label>
+
+                            <input
+                                type="number"
+                                id="jumlah-pelanggan"
+                                min="1"
+                                value="1"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tanggal-reservasi">
+                                Tanggal Reservasi
+                            </label>
+
+                            <input
+                                type="date"
+                                id="tanggal-reservasi"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="menu-order-section">
+
+                        <div class="panel-header">
+                            <div>
+                                <h2>Menu Pesanan</h2>
+                                <p>
+                                    Pilih menu dan masukkan jumlah pesanan.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nama Menu</th>
+                                        <th>Harga</th>
+                                        <th>Jumlah</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="daftar-menu">
+                                    <!-- Menu dibuat oleh JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="total-box">
+
+                        <div class="total-row">
+                            <span>Total Item</span>
+                            <strong id="jumlah-item">0 item</strong>
+                        </div>
+
+                        <div class="total-row total-final">
+                            <span>Total Pembayaran</span>
+                            <strong id="total-pembayaran">Rp0</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button
+                            type="reset"
+                            class="btn btn-secondary"
+                            id="reset-reservasi"
+                        >
+                            Reset Form
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Simpan Reservasi
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Daftar Reservasi Pelanggan</h2>
+                        <p>
+                            Periksa detail pelanggan, meja, menu, dan total.
+                        </p>
+                    </div>
+
+                    <input
+                        type="search"
+                        id="cari-reservasi"
+                        class="search-input"
+                        placeholder="Cari nama atau nomor meja..."
+                    >
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kode</th>
+                                <th>Nama Pelanggan</th>
+                                <th>Nomor Meja</th>
+                                <th>Menu Pesanan</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabel-reservasi">
+                            <tr>
+                                <td colspan="7" class="empty-state">
+                                    Belum ada reservasi pelanggan.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>
